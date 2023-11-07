@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> belajar algoritma</title>
+    <style>
+     .nana {
+       
+       width: 300px;
+       border: 3px solid black;
+       margin: 0 auto;
+     }
+     .input {
+      margin-left: 40px;
+      text-align: center;
+      margin-top: 20px;
+      border: 2px solid black;
+      
+     }
+    .input:hover {
+      border: none;
+      outline: 3px dotted blue;
+    }
+   button {
+     background-color: red;
+     color: white;
+     margin: 14px 100px;
+     
+   }
+   #hasil {
+     border:3px solid black;
+     width: 200px;
+     
+     margin: 20px auto;
+     text-align: center;
+     
+   }
+    </style>
+  </head>
+  <body>
+  <div class="nana">  
+<input class="input" placeholder="masukan nilai awal">
+<input class="input" placeholder="masukan nilai akhir">
+ <button onclick="run()"> cari nilai prima</button>
+  </div>
+  
+  <div id="hasil"> </div>
+  
+ 
+  
+    
+    
+    
+    
+    
+    <script type="text/javascript">
+    
+    let dr = document.getElementsByClassName("input")[0]
+    let d = document.getElementsByClassName("input")[1]
+  let hasil = document.getElementById("hasil")
+   function run() {
+     prima(dr.value,d.value)
+   }
+
+      function prima(dari,ke) {
+let prima = []
+
+
+  for(i = 0 ; i <= ke; i++) {
+    let sisa = []
+    for(j = 0 ; j <= i; j++) {
+      if( i % j === 0) sisa.push(j)
+    }
+    if(sisa.length === 2 && i >= dari) prima.push(i)
+  }
+  
+  let pp = prima.join("<br>")
+  hasil.innerHTML = pp
+  
+}
+      
+      
+    </script>
+  </body>
+  
+  
+  
+  
+</html>
